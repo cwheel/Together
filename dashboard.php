@@ -1,10 +1,12 @@
 <?php
-	include("../config.php");
+	include("config.php");
 	
 	session_start();
 	
+	ini_set ("display_errors", "1");
+	error_reporting(E_ALL);
+	
 	if (isset($_SESSION["User.username"]) && isset($_SESSION["User.key"])) {
-		echo $_SESSION["User.username"];
 		mysql_connect($sqlserver, $sqluser, $sqlpass);
 		mysql_select_db('Together');
 		
@@ -12,12 +14,8 @@
 		
 		$result = mysql_query($sql);
 		
-		echo "here =>" . mysql_result($result, 0, 2);
-		
-		if (mysql_num_rows($result) == 1) { 
-			echo mysql_result($result, 0, 3);
-		} else {
-			//header("Location: index.php");
+		if (mysql_num_rows($result) != 1) { 
+			header("Location: index.php");
 		}
 		
 	} else {
@@ -27,7 +25,7 @@
 
 <html>
 	<head>
-		<title><?php include("../config.php"); echo $partyName . " Control"; ?></title>
+		<title><?php include("config.php"); echo $partyName . " Control"; ?></title>
 	</head>
 	<body>
 		<b><?php
@@ -40,5 +38,14 @@
 			
 			echo "Welcome " . mysql_result($result, 0, 3);
 		?></b>
+		
+		<a href="objects/logout.php">Logout</a>
+		
+		<form action="objects/addpoll.php" method="post">
+			<input name="question" type="text" size="20" placeholder="Poll Question">
+			<input name="mode" type="text" size="20" placeholder="Button Based (0|1)">
+			<input name="options" type="text" size="20" placeholder="Options (CSV)">
+			<input type="submit" value="Add Poll">
+		</form>
 	</body>
 </html>
