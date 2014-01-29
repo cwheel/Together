@@ -24,7 +24,7 @@
 			$_SESSION['User.username'] = $user;
 			$_SESSION['User.session_token'] = $key;
 			
-			mysql_query("UPDATE Admin SET session_token='" . $key . "' WHERE username='" . mysql_real_escape_string($user) . "' and password='" . mysql_real_escape_string(sha1($pass)) . "'");
+			mysql_query("UPDATE Admin SET session_token='" . $key . "' WHERE username='" . mysql_real_escape_string($user) . "' and password='" . mysql_real_escape_string(hash('sha512', $pass)) . "'");
 					
 			header('Location: ../dashboard.php');
 					
