@@ -1,4 +1,3 @@
-
 <?php 
 
 //To use, remove _example from the file name

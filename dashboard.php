@@ -1,26 +1,12 @@
 <?php
-	include("config.php");
+	include("util/config.php");
+	include("util/session_mgr.php");
 	
-	session_start();
-	
-	ini_set ("display_errors", "1");
-	error_reporting(E_ALL);
-	
-	if (isset($_SESSION["User.username"]) && isset($_SESSION["User.key"])) {
-		mysql_connect($sqlserver, $sqluser, $sqlpass);
-		mysql_select_db('Together');
-		
-		$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($_SESSION["User.username"]) . "' and password='" . mysql_real_escape_string($_SESSION["User.key"]) . "'";
-		
-		$result = mysql_query($sql);
-		
-		if (mysql_num_rows($result) != 1) { 
-			header("Location: index.php");
-		}
-		
-	} else {
-		header('Location: index.php');
+	if (session_id() == '') {
+		session_start();
 	}
+	
+	validateSession();
 ?>
 
 <html>
@@ -32,7 +18,7 @@
 			mysql_connect($sqlserver, $sqluser, $sqlpass);
 			mysql_select_db('Together');
 			
-			$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($_SESSION["User.username"]) . "' and password='" . mysql_real_escape_string($_SESSION["User.key"]) . "'";
+			$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($_SESSION["User.username"]) . "' and session_token='" . mysql_real_escape_string($_SESSION["User.session_token"]) . "'";
 			
 			$result = mysql_query($sql);
 			

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.35-0ubuntu0.12.04.1)
 # Database: Together
-# Generation Time: 2014-01-28 15:00:50 +0000
+# Generation Time: 2014-01-29 00:04:14 +0000
 # ************************************************************
 
 
@@ -30,6 +30,7 @@ CREATE TABLE `Admin` (
   `username` varchar(40) DEFAULT NULL,
   `password` varchar(128) DEFAULT NULL,
   `name` varchar(40) DEFAULT NULL,
+  `session_token` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,7 +43,8 @@ DROP TABLE IF EXISTS `Polls`;
 
 CREATE TABLE `Polls` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `question` varchar(11) DEFAULT NULL,
+  `question` varchar(100) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT '1',
   `type` varchar(11) DEFAULT NULL,
   `options` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`)

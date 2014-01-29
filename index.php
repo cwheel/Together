@@ -1,16 +1,18 @@
 <?php
-	include("config.php");
+	include("util/config.php");
 	
-	session_start();
+	if (session_id() == '') {
+		session_start();
+	}
 	
 	ini_set ("display_errors", "1");
 	error_reporting(E_ALL);
 	
-	if (isset($_SESSION["User.username"]) && isset($_SESSION["User.key"])) {
+	if (isset($_SESSION["User.username"]) && isset($_SESSION["User.session_token"])) {
 		mysql_connect($sqlserver, $sqluser, $sqlpass);
 		mysql_select_db('Together');
 		
-		$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($_SESSION["User.username"]) . "' and password='" . mysql_real_escape_string($_SESSION["User.key"]) . "'";
+		$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($_SESSION["User.username"]) . "' and session_token='" . mysql_real_escape_string($_SESSION["User.session_token"]) . "'";
 		
 		$result = mysql_query($sql);
 		
