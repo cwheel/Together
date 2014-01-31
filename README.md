@@ -8,9 +8,9 @@ A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct 
 
 [x] Authentication
 
-[] Voting
+[X] Voting
 
-[] Voting Management
+[X] Voting Management
 
 [] UI
 
