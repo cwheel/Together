@@ -6,7 +6,7 @@ A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct 
 
 **Project Status:**
 
-[x] Authentication
+[X] Authentication
 
 [X] Voting
 
