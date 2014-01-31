@@ -45,8 +45,19 @@
 			$polls = mysql_query("SELECT * FROM Polls");
 			
 			for ($i = 0; $i < mysql_num_rows($polls); $i++) {
-				$results = array();
-				$votes = mysql_query("SELECT * FROM Votes WHERE pollID='" . mysql_real_escape_string(mysql_result($polls, $i, 0)) . "'");
+				$options = explode(",", mysql_result($polls, $i, 4));
+				$allVotes = mysql_query("SELECT * FROM Votes WHERE pollID='" . mysql_real_escape_string(mysql_result($polls, $i, 0))  . "'");
+				$voteCount = mysql_num_rows($allVotes);
+				
+				echo '<br><br><b>' . mysql_result($polls, $i, 1) . '</b>';
+				echo '&nbsp;<a href="objects/deletepoll.php?pollID=' . mysql_result($polls, $i, 0) . '">Delete Poll</a>';
+				
+				for ($j = 0; $j < count($options); $j++) {
+					$votes = mysql_query("SELECT * FROM Votes WHERE pollID='" . mysql_real_escape_string(mysql_result($polls, $i, 0)) . "' AND vote='" . $options[$j] . "'");
+					
+					$percent = (mysql_num_rows($votes) / $voteCount) * 100;
+					echo "<br>" . $options[$j] . ": " .  round($percent, 2) . "%";
+				}
 			}
 		?>
 	</body>
