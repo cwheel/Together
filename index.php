@@ -29,6 +29,7 @@
 	<input type="submit" value="Login">
 </form>
 
+
 <br><b>Active Polls</b>
 <?php
 	mysql_connect($sqlserver, $sqluser, $sqlpass);
@@ -36,8 +37,51 @@
 	
 	$sql = "SELECT * FROM Polls WHERE visible='1'";
 	$polls = mysql_query($sql);
+	$activePolls = 0;
 	
 	for ($i = 0; $i < mysql_num_rows($polls); $i++) {
-		echo "<br>" . mysql_result($polls, $i, 1);
+		 if (mysql_result($polls, $i, 3) == "0") {
+		 	$opts = explode(",", mysql_result($polls, $i, 4));
+		 	
+		 	$dvt = mysql_query("SELECT * FROM Votes WHERE voterID='" . mysql_real_escape_string($_SERVER['REMOTE_ADDR']) . "' and pollID='" . mysql_real_escape_string(mysql_result($polls, $i, 0)) . "'");
+		 	
+		 	if (mysql_num_rows($dvt) < 1) {
+		 		$activePolls++;
+		 		
+		 		echo "<br>" . mysql_result($polls, $i, 1);
+		 		echo '<form action="objects/vote.php" method="post"><select onchange="this.form.submit()" name="opt">';
+		 		
+		 		for ($j = 0; $j < count($opts); $j++) {
+		 			echo '<option value="' . $opts[$j] . '">' . $opts[$j] . '</option>';
+		 		}
+		 		
+		 		echo '</select>';
+		 		echo '<input type="hidden" name="pollID" value="' . mysql_result($polls, $i, 0) . '">';
+		 		echo '</form>';
+		 		 
+		 	}		 	
+		 } else if (mysql_result($polls, $i, 3) == "1") {
+		 	$opts = explode(",", mysql_result($polls, $i, 4));
+		 	
+		 	$dvt = mysql_query("SELECT * FROM Votes WHERE voterID='" . mysql_real_escape_string($_SERVER['REMOTE_ADDR']) . "' and pollID='" . mysql_real_escape_string(mysql_result($polls, $i, 0)) . "'");
+		 	
+		 	if (mysql_num_rows($dvt) < 1) {
+		 		$activePolls++;
+		 		
+		 		echo "<br>" . mysql_result($polls, $i, 1);
+			 	echo '<form action="objects/vote.php" method="post">';
+			 	echo '<input type="hidden" name="pollID" value="' . mysql_result($polls, $i, 0) . '">';
+			 	
+			 	for ($j = 0; $j < count($opts); $j++) {
+			 		echo '<input type="submit" value="' . $opts[$j] . '" name="opt">';
+			 	}
+			 	
+			 	echo '</form>';
+			}
+		}
+	}
+	
+	if ($activePolls == 0) {
+		echo "None...";
 	}
 ?>

@@ -16,7 +16,7 @@
 			session_start();
 		}
 		
-		$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($user) . "' and password='" . mysql_real_escape_string(sha1($pass)) . "'";
+		$sql = "SELECT * FROM Admin WHERE username='" . mysql_real_escape_string($user) . "' and password='" . mysql_real_escape_string(hash('sha512', $pass)) . "'";
 		$result = mysql_query($sql);
 				
 		if (mysql_num_rows($result) == 1) { 

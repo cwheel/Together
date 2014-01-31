@@ -33,5 +33,21 @@
 			<input name="options" type="text" size="20" placeholder="Options (CSV)">
 			<input type="submit" value="Add Poll">
 		</form>
+		
+		<br>
+		<br>
+		<b>Poll Results</b>
+		
+		<?php
+			mysql_connect($sqlserver, $sqluser, $sqlpass);
+			mysql_select_db('Together');
+
+			$polls = mysql_query("SELECT * FROM Polls");
+			
+			for ($i = 0; $i < mysql_num_rows($polls); $i++) {
+				$results = array();
+				$votes = mysql_query("SELECT * FROM Votes WHERE pollID='" . mysql_real_escape_string(mysql_result($polls, $i, 0)) . "'");
+			}
+		?>
 	</body>
 </html>
