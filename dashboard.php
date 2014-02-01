@@ -34,6 +34,12 @@
 			<input type="submit" value="Add Poll">
 		</form>
 		
+		<form action="objects/updatevalue.php" method="post">
+			<input name="value" type="text" size="20" placeholder="Current Game Name">
+			<input type="hidden" name="key" value="current_game">
+			<input type="submit" value="Save">
+		</form>
+		
 		<br>
 		<br>
 		<b>Poll Results</b>
