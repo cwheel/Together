@@ -40,6 +40,12 @@
 			<input type="submit" value="Save">
 		</form>
 		
+		<form action="objects/updatevalue.php" method="post">
+			<input name="value" type="text" size="20" placeholder="Current Game Icon">
+			<input type="hidden" name="key" value="current_game_icon">
+			<input type="submit" value="Save">
+		</form>
+		
 		<br>
 		<br>
 		<b>Poll Results</b>

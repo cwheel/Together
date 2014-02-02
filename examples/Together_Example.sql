@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.35-0ubuntu0.12.04.1)
 # Database: Together
-# Generation Time: 2014-02-01 02:26:00 +0000
+# Generation Time: 2014-02-02 22:32:26 +0000
 # ************************************************************
 
 
@@ -44,7 +44,7 @@ DROP TABLE IF EXISTS `LiveData`;
 CREATE TABLE `LiveData` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ld_key` varchar(50) DEFAULT NULL,
-  `ld_value` varchar(300) DEFAULT NULL,
+  `ld_value` varchar(600) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -53,7 +53,10 @@ LOCK TABLES `LiveData` WRITE;
 
 INSERT INTO `LiveData` (`id`, `ld_key`, `ld_value`)
 VALUES
-	(1,'current_game','Test Game');
+	(1,'current_game',''),
+	(2,'current_game_descripton',''),
+	(3,'current_game_icon',''),
+	(4,'alert','');
 
 /*!40000 ALTER TABLE `LiveData` ENABLE KEYS */;
 UNLOCK TABLES;
