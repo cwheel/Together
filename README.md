@@ -14,11 +14,9 @@ A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct 
 
 [] UI
 
-[] News Feed
+[X] Current Game Information
 
-[] Current Game Information
-
-[] Alerts
+[~] Alerts
 
 [] Server List
 
