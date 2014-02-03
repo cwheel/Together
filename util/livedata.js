@@ -15,9 +15,11 @@ function updatePage(phash, ldhash)
                 $('#currentGameIcon').attr("src", (json.current_game_icon));
                 
                 if ($('#alert').html() != json.alert) {
-                	//Audio needs fixing...
-                	//document.getElementById('noteSound').currentTime = 0;
-                	//document.getElementById('noteSound').play();
+                	if (json.alert != "") {
+                		document.getElementById('noteSound').play();
+                	}
+                	
+                	$('#alert').html(json.alert);
                 	$('#alert').show('fast');
                 }
                 

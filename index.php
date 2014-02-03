@@ -42,4 +42,4 @@
 <div id="polls"></div>
 
 <div id="alert" onclick="hideAlert();"></div>
-<audio autoplay="" name="media" id="noteSound"><source src="src/notification.mp3" type="audio/mpeg" id="player"></audio>
+<audio name="media" id="noteSound"><source src="src/notification.mp3" type="audio/mpeg" id="player"></audio>
