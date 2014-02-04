@@ -1,7 +1,7 @@
 Together
 ========
 
-A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct votes somewhat quitely and painlessly.
+A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct votes somewhat quietly and painlessly.
 
 
 **Project Status:**
