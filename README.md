@@ -18,6 +18,6 @@ A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct 
 
 [X] Alerts
 
-[] Server List
+[~] Server List
 
-[] Server Management
+[~] Server Management
