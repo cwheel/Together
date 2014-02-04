@@ -1,6 +1,6 @@
-function updatePage(phash, ldhash)
+function updatePage(phash, ldhash, shash)
 {
-    var hashes = {'phash' : phash, 'ldhash' : ldhash};
+    var hashes = {'phash' : phash, 'ldhash' : ldhash, 'shash' : shash};
 
     $.ajax(
         {
@@ -16,7 +16,7 @@ function updatePage(phash, ldhash)
                 
                 if ($('#alert').html() != json.alert) {
                 	if (json.alert != "") {
-                		document.getElementById('noteSound').play();
+                		$('#noteSound')[0].play();
                 	}
                 	
                 	$('#alert').html(json.alert);
@@ -26,8 +26,9 @@ function updatePage(phash, ldhash)
                 $('#alert').html(json.alert);
                 
                 $('#polls').html(json.polls);
+                $('#servers').html(json.servers);
                 
-                updatePage(json.phash, json.ldhash);
+                updatePage(json.phash, json.ldhash, json.shash);
             }
         }
     );

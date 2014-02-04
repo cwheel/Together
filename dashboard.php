@@ -71,6 +71,15 @@
 					echo "<br>" . $options[$j] . ": " .  round($percent, 2) . "%";
 				}
 			}
+			
+			$servers = mysql_query("SELECT * FROM Servers");
+			echo '<br><br><b>Servers</b><br>';
+			for ($i = 0; $i < mysql_num_rows($servers); $i++) {
+				echo '<br>' . mysql_result($servers, $i, 1) . '&nbsp;' . mysql_result($servers, $i, 3) . '&nbsp;' . mysql_result($servers, $i, 7) . '&nbsp;';
+				echo '<a href="#">Delete</a>&nbsp;';
+				echo '<a href="#">Start</a>&nbsp;';
+				echo '<a href="#">Stop</a>&nbsp;';
+			}
 		?>
 	</body>
 </html>

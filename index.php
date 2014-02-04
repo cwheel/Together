@@ -5,9 +5,6 @@
 		session_start();
 	}
 	
-	ini_set ("display_errors", "1");
-	error_reporting(E_ALL);
-	
 	if (isset($_SESSION["User.username"]) && isset($_SESSION["User.session_token"])) {
 		mysql_connect($sqlserver, $sqluser, $sqlpass);
 		mysql_select_db('Together');
@@ -19,9 +16,9 @@
 		if (mysql_num_rows($result) == 1) { 
 			header("Location: dashboard.php");
 		}
-		
 	}
 ?>
+
 <head>
 	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<script type="text/javascript" src="util/livedata.js"></script>
@@ -40,6 +37,9 @@
 
 <br><b>Active Polls</b>
 <div id="polls"></div>
+
+<br><b>Active Servers</b>
+<div id="servers"></div>
 
 <div id="alert" onclick="hideAlert();"></div>
 <audio name="media" id="noteSound"><source src="src/notification.mp3" type="audio/mpeg" id="player"></audio>

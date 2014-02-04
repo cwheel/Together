@@ -9,11 +9,15 @@
 	while (true) {
 		$currentldHash = mysql_result(mysql_query("CHECKSUM TABLE LiveData"), 0, 1);
 		$currentpHash = mysql_result(mysql_query("CHECKSUM TABLE Polls"), 0, 1);
+		$currentsHash = mysql_result(mysql_query("CHECKSUM TABLE Servers"), 0, 1);
 		
 	    $ldhash = isset($_GET['ldhash']) ? $_GET['ldhash'] : null;
 	    $phash = isset($_GET['phash']) ? $_GET['phash'] : null;
+	    $shash = isset($_GET['shash']) ? $_GET['shash'] : null;
 	
-	    if ($ldhash == null || $ldhash != $currentldHash || $phash == null || $phash != $currentpHash) {
+	    if ($ldhash == null || $ldhash != $currentldHash || $phash == null || $phash != $currentpHash || $shash == null || $shash != $currentsHash) {
+	    
+	    	//Polls
 	    	$pollsHTML = "";
 	    	
 	    	$sql = "SELECT * FROM Polls WHERE visible='1'";
@@ -66,14 +70,25 @@
 	    		$pollsHTML = "None...";
 	    	}
 	    	
-	    	$kvs = mysql_query("SELECT * FROM LiveData");
+	    	//Servers
+	    	$serversHTML = "<br>";
+	    	$servers = mysql_query("SELECT * FROM Servers WHERE visible='1'");
+	    	
+	    	for ($i = 0; $i < mysql_num_rows($servers); $i++) {
+	    		$serversHTML = $serversHTML . mysql_result($servers, $i, 1) . '&nbsp;' . mysql_result($servers, $i, 3) . '&nbsp;' . mysql_result($servers, $i, 7);
+	    		$serversHTML = $serversHTML . '<br>';
+	    	}
 	    	
 	        $jsonArray = array(
 	            'phash' => $currentpHash,
 	            'ldhash' => $currentldHash,
+	            'shash' => $currentsHash,
+	            'servers' => $serversHTML,
 	            'polls' => $pollsHTML
 	        );
 	        
+	        //Keys and values
+	        $kvs = mysql_query("SELECT * FROM LiveData");
 	        for ($i = 0; $i < mysql_num_rows($kvs); $i++) {
 	        	$jsonArray[mysql_result($kvs, $i, 1)] = mysql_result($kvs, $i, 2);
 	        }
