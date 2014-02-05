@@ -12,6 +12,7 @@
 <html>
 	<head>
 		<title><?php include("config.php"); echo $partyName . " Control"; ?></title>
+        <link rel="stylesheet" type="text/css" href="style/style.css" /> 
 	</head>
 	<body>
 		<b><?php

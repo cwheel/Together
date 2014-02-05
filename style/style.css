@@ -1,10 +1,16 @@
-/* ui.css
+/* ui.css */
 
+/* Fonts */
 
+b {
+	color: #333; 
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+} 
 
 /* Big Buttons */
 
-a.bigbtn {
+.bigbtn {
 	font-size: 25px;
 	font-weight: bold;
 	color: #fff;
@@ -12,15 +18,15 @@ a.bigbtn {
 	padding: 15px;
 }
 
-a.bigbtn:hover {
+.bigbtn:hover {
 	background: #2eacff;
 }
 
-a.bigbtn:active {
+.bigbtn:active {
 	top: 1px;
 }
 
-a.bigbtn2 {
+.bigbtn2 {
 	font-size: 25px;
 	font-weight: bold;
 	color: #fff;
@@ -29,15 +35,15 @@ a.bigbtn2 {
 	padding: 15px;
 }
 
-a.bigbtn2:hover {
+.bigbtn2:hover {
 	background: #2eacff;
 }
 
-a.bigbtn2:active {
+.bigbtn2:active {
 	top: 1px;
 }
 
-a.bigbtn3 {
+.bigbtn3 {
 	font-size: 25px;
 	font-weight: bold;
 	color: #fff;
@@ -50,18 +56,18 @@ a.bigbtn3 {
 	border: 1px solid #0191d9;
 }
 
-a.bigbtn3:hover {
+.bigbtn3:hover {
 	background-image: -webkit-linear-gradient(#2eacff, #0191d9);
 	background-image: -moz-linear-gradient(#2eacff, #0191d9);
 	background-image: -ms-linear-gradient(#2eacff, #0191d9);
 	background-image: linear-gradient(#2eacff, #0191d9);
 }
 
-a.bigbtn3:active {
+.bigbtn3:active {
 	top: 1px;
 }
 
-a.bigbtn4 {
+.bigbtn4 {
 	font-size: 25px;
 	font-weight: bold;
 	color: #fff;
@@ -75,14 +81,14 @@ a.bigbtn4 {
 	border: 1px solid #0082c3;
 }
 
-a.bigbtn4:hover {
+.bigbtn4:hover {
 	background-image: -webkit-linear-gradient(#2eacff, #0191d9);
 	background-image: -moz-linear-gradient(#2eacff, #0191d9);
 	background-image: -ms-linear-gradient(#2eacff, #0191d9);
 	background-image: linear-gradient(#2eacff, #0191d9);
 }
 
-a.bigbtn4:active {
+.bigbtn4:active {
 	top: 1px;
 }
 
@@ -90,7 +96,7 @@ a.bigbtn4:active {
 /* Small Buttons */
 
 
-a.smallbtn {
+.smallbtn {
 	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
@@ -98,15 +104,15 @@ a.smallbtn {
 	padding: 10px;
 }
 
-a.smallbtn:hover {
+.smallbtn:hover {
 	background: #2eacff;
 }
 
-a.smallbtn:active {
+.smallbtn:active {
 	top: 1px;
 }
 
-a.smallbtn2 {
+.smallbtn2 {
 	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
@@ -115,15 +121,15 @@ a.smallbtn2 {
 	padding: 10px;
 }
 
-a.smallbtn2:hover {
+.smallbtn2:hover {
 	background: #2eacff;
 }
 
-a.smallbtn2:active {
+.smallbtn2:active {
 	top: 1px;
 }
 
-a.smallbtn3 {
+.smallbtn3 {
 	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
@@ -136,18 +142,18 @@ a.smallbtn3 {
 	border: 1px solid #0191d9;
 }
 
-a.smallbtn3:hover {
+.smallbtn3:hover {
 	background-image: -webkit-linear-gradient(#2eacff, #0191d9);
 	background-image: -moz-linear-gradient(#2eacff, #0191d9);
 	background-image: -ms-linear-gradient(#2eacff, #0191d9);
 	background-image: linear-gradient(#2eacff, #0191d9);
 }
 
-a.smallbtn3:active {
+.smallbtn3:active {
 	top: 1px;
 }
 
-a.smallbtn4 {
+.smallbtn4 {
 	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
@@ -161,14 +167,14 @@ a.smallbtn4 {
 	border: 1px solid #0082c3;
 }
 
-a.smallbtn4:hover {
+.smallbtn4:hover {
 	background-image: -webkit-linear-gradient(#2eacff, #0191d9);
 	background-image: -moz-linear-gradient(#2eacff, #0191d9);
 	background-image: -ms-linear-gradient(#2eacff, #0191d9);
 	background-image: linear-gradient(#2eacff, #0191d9);
 }
 
-a.smallbtn4:active {
+.smallbtn4:active {
 	top: 1px;
 }
 
@@ -177,7 +183,7 @@ a.smallbtn4:active {
 /* Tag Buttons */
 
 
-a.tagbtn {
+.tagbtn {
 	font-size: 15px;
 	font-weight: bold;
 	color: #fff;
@@ -185,15 +191,15 @@ a.tagbtn {
 	padding: 5px;
 }
 
-a.tagbtn:hover {
+.tagbtn:hover {
 	background: #2eacff;
 }
 
-a.tagbtn:active {
+.tagbtn:active {
 	top: 1px;
 }
 
-a.tagbtn2 {
+.tagbtn2 {
 	font-size: 15px;
 	font-weight: bold;
 	color: #fff;
@@ -202,15 +208,15 @@ a.tagbtn2 {
 	padding: 5px;
 }
 
-a.tagbtn2:hover {
+.tagbtn2:hover {
 	background: #2eacff;
 }
 
-a.tagbtn2:active {
+.tagbtn2:active {
 	top: 1px;
 }
 
-a.tagbtn3 {
+.tagbtn3 {
 	font-size: 15px;
 	font-weight: bold;
 	color: #fff;
@@ -223,18 +229,18 @@ a.tagbtn3 {
 	border: 1px solid #0191d9;
 }
 
-a.tagbtn3:hover {
+.tagbtn3:hover {
 	background-image: -webkit-linear-gradient(#2eacff, #0191d9);
 	background-image: -moz-linear-gradient(#2eacff, #0191d9);
 	background-image: -ms-linear-gradient(#2eacff, #0191d9);
 	background-image: linear-gradient(#2eacff, #0191d9);
 }
 
-a.tagbtn3:active {
+.tagbtn3:active {
 	top: 1px;
 }
 
-a.tagbtn4 {
+.tagbtn4 {
 	font-size: 15px;
 	font-weight: bold;
 	color: #fff;
@@ -248,14 +254,14 @@ a.tagbtn4 {
 	border: 1px solid #0082c3;
 }
 
-a.tagbtn4:hover {
+.tagbtn4:hover {
 	background-image: -webkit-linear-gradient(#2eacff, #0191d9);
 	background-image: -moz-linear-gradient(#2eacff, #0191d9);
 	background-image: -ms-linear-gradient(#2eacff, #0191d9);
 	background-image: linear-gradient(#2eacff, #0191d9);
 }
 
-a.tagbtn4:active {
+.tagbtn4:active {
 	top: 1px;
 }
 
@@ -283,8 +289,8 @@ input[type=password],
 input[type=text],
 textarea[type=text] {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 25px;
-	width: 100%;
+	font-size: 12px;
+	width: 15%;
 	color: #999;
 	padding: 10px;
 	border: 1px solid #ddd;

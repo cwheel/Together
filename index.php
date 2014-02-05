@@ -18,16 +18,18 @@
 		}
 	}
 ?>
-
 <head>
 	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	<script type="text/javascript" src="util/livedata.js"></script>
 	<title><?php include("config.php"); echo $partyName; ?></title>
+    <link rel="stylesheet" type="text/css" href="style/style.css" /> 
 </head>
+
+
 <form action="objects/auth.php" method="post">
 	<input name="username" type="text" size="20" placeholder="Username" autofocus>
-	<input name="password" type="password" size="20" placeholder="Password"><br>
-	<input type="submit" value="Login">
+	<input name="password" type="password" size="20" placeholder="Password">
+	<input type="submit" value="Login" class="tagbtn3" data-tip=".tagbtn3">
 </form>
 
 <br><b>Current Game</b>
