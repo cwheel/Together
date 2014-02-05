@@ -78,8 +78,8 @@
 			for ($i = 0; $i < mysql_num_rows($servers); $i++) {
 				echo '<br>' . mysql_result($servers, $i, 1) . '&nbsp;' . mysql_result($servers, $i, 3) . '&nbsp;' . mysql_result($servers, $i, 7) . '&nbsp;';
 				echo '<a href="#">Delete</a>&nbsp;';
-				echo '<a href="#">Start</a>&nbsp;';
-				echo '<a href="#">Stop</a>&nbsp;';
+				echo '<a href="objects/manageserver.php?action=start&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Start</a>&nbsp;';
+				echo '<a href="objects/manageserver.php?action=stop&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Stop</a>&nbsp;';
 			}
 		?>
 	</body>

@@ -1,9 +1,6 @@
 <?php
 	include("../util/config.php");
 	include("../util/session_mgr.php");
-	
-	ini_set ("display_errors", "1");
-	error_reporting(E_ALL);
 		
 	mysql_connect($sqlserver, $sqluser, $sqlpass);
 	mysql_select_db('Together');
