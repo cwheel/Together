@@ -14,6 +14,9 @@
 		<title><?php include("config.php"); echo $partyName . " Control"; ?></title>
         <link rel="stylesheet" type="text/css" href="style/style.css" /> 
 	</head>
+<div id "header">
+    <img src="images/head.png" align="center"/>
+</div>
 	<body>
 		<b><?php
 			mysql_connect($sqlserver, $sqluser, $sqlpass);
@@ -25,30 +28,31 @@
 			
 			echo "Welcome " . mysql_result($result, 0, 3);
 		?></b>
-		
 		<a href="objects/logout.php">Logout</a>
 		
+<div id="main">
+<b>Create a new poll</b>
 		<form action="objects/addpoll.php" method="post">
 			<input name="question" type="text" size="20" placeholder="Poll Question">
 			<input name="mode" type="text" size="20" placeholder="Button Based (0|1)">
 			<input name="options" type="text" size="20" placeholder="Options (CSV)">
-			<input type="submit" value="Add Poll">
+			<input type="submit" value="Add Poll" class="tagbtn3">
 		</form>
-		
+</div>
+<div id="main">
+<b>Update current game information</b>
 		<form action="objects/updatevalue.php" method="post">
 			<input name="value" type="text" size="20" placeholder="Current Game Name">
 			<input type="hidden" name="key" value="current_game">
-			<input type="submit" value="Save">
-		</form>
-		
-		<form action="objects/updatevalue.php" method="post">
+			<input type="submit" value="Save" class="tagbtn3">
 			<input name="value" type="text" size="20" placeholder="Current Game Icon">
 			<input type="hidden" name="key" value="current_game_icon">
-			<input type="submit" value="Save">
+			<input type="submit" value="Save" class="tagbtn3">
 		</form>
-		
+        <p>Game decriptions are pulled from Wikipedia based on the name.</p>
+</div>
 		<br>
-		<br>
+<div id="main" align="left">
 		<b>Poll Results</b>
 		
 		<?php
@@ -72,7 +76,6 @@
 					echo "<br>" . $options[$j] . ": " .  round($percent, 2) . "%";
 				}
 			}
-			
 			$servers = mysql_query("SELECT * FROM Servers");
 			echo '<br><br><b>Servers</b><br>';
 			for ($i = 0; $i < mysql_num_rows($servers); $i++) {
@@ -82,5 +85,6 @@
 				echo '<a href="objects/manageserver.php?action=stop&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Stop</a>&nbsp;';
 			}
 		?>
+        </div>
 	</body>
 </html>

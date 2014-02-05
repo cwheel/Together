@@ -24,16 +24,20 @@
 	<title><?php include("config.php"); echo $partyName; ?></title>
     <link rel="stylesheet" type="text/css" href="style/style.css" /> 
 </head>
-
-
+<div id "header">
+    <img src="images/head.png" align="center"/>
+</div>
+<div id="main">
+<b>Administrator Dashboard Login</b>
 <form action="objects/auth.php" method="post">
 	<input name="username" type="text" size="20" placeholder="Username" autofocus>
 	<input name="password" type="password" size="20" placeholder="Password">
-	<input type="submit" value="Login" class="tagbtn3" data-tip=".tagbtn3">
+	<input type="submit" value="Login" class="tagbtn3">
 </form>
-
+</div>
+<div id="main" align="left">
 <br><b>Current Game</b>
-<img src="" id="currentGameIcon">
+<img src="" width="24" height="24" id="currentGameIcon">
 <div id="currentGame"></div>
 <div id="currentGameDescription"></div>
 
@@ -45,3 +49,4 @@
 
 <div id="alert" onclick="hideAlert();"></div>
 <audio name="media" id="noteSound"><source src="src/notification.mp3" type="audio/mpeg" id="player"></audio>
+</div>
