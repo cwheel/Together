@@ -16,7 +16,6 @@
 	if (mysql_num_rows($serverInfo) > 0) {
 		if ($action == "start") {
 			if (mysql_result($serverInfo, 0, 2) != "") {
-				echo "eh";
 				startScreenWithNameAndCmd(mysql_result($serverInfo, 0, 1), mysql_result($serverInfo, 0, 4), mysql_result($serverInfo, 0, 2));
 			} else {
 				startScreenWithNameAndCmd(mysql_result($serverInfo, 0, 1), mysql_result($serverInfo, 0, 4));
@@ -26,4 +25,6 @@
 			sendCmdToScreen(mysql_result($serverInfo, 0, 1), mysql_result($serverInfo, 0, 5));
 		}
 	}
+	
+	header("Location: ../dashboard.php");
 ?>

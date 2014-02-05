@@ -1,6 +1,4 @@
 <?php  
-ini_set ("display_errors", "1");
-error_reporting(E_ALL);
 	function startScreenWithNameAndCmd($name, $cmd, $dir) {
 		if (isset($dir)) {
 			exec('cd ' . $dir . '; screen -S ' . $name . ' -d -m ' . $cmd);
@@ -10,6 +8,6 @@ error_reporting(E_ALL);
 	}
 	
 	function sendCmdToScreen($screen, $cmd) {
-		exec('screen -S ' . $screen . ' -p 0 -X stuff "' . $cmd . '`echo -ne \'\\015\'`"');	
+		exec('screen -S ' . $screen . ' -p 0 -X stuff "' . $cmd . '`echo \'\\015\'`"');	
 	}
 ?>
