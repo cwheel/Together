@@ -58,7 +58,7 @@
 	    			 	$pollsHTML = $pollsHTML . '<input type="hidden" name="pollID" value="' . mysql_result($polls, $i, 0) . '">';
 	    			 	
 	    			 	for ($j = 0; $j < count($opts); $j++) {
-	    			 		$pollsHTML = $pollsHTML . '<input type="submit" value="' . $opts[$j] . '" name="opt">';
+	    			 		$pollsHTML = $pollsHTML . '<input type="submit" value=" class="tagbtn3"'. $opts[$j] . '" name="opt">';
 	    			 	}
 	    			 	
 	    			 	$pollsHTML = $pollsHTML . '</form>';
