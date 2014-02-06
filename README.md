@@ -12,7 +12,7 @@ A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct 
 
 [✓] Voting Management
 
-[] UI
+[~] UI
 
 [✓] Current Game Information
 
