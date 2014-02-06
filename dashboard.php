@@ -47,6 +47,15 @@
 			<input type="submit" value="Save">
 		</form>
 		
+		<form action="objects/addserver.php" method="post">
+			<input name="name" type="text" size="20" placeholder="Server Name">
+			<input name="path" type="text" size="20" placeholder="Server Path">
+			<input name="port" type="text" size="20" placeholder="Server Port">
+			<input name="startCmd" type="text" size="20" placeholder="Start Command">
+			<input name="endCmd" type="text" size="20" placeholder="Stop Commnd">
+			<input type="submit" value="Add Server">
+		</form>
+		
 		<br>
 		<br>
 		<b>Poll Results</b>
@@ -77,7 +86,7 @@
 			echo '<br><br><b>Servers</b><br>';
 			for ($i = 0; $i < mysql_num_rows($servers); $i++) {
 				echo '<br>' . mysql_result($servers, $i, 1) . '&nbsp;' . mysql_result($servers, $i, 3) . '&nbsp;' . mysql_result($servers, $i, 7) . '&nbsp;';
-				echo '<a href="#">Delete</a>&nbsp;';
+				echo '<a href="objects/manageserver.php?action=delete&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Delete</a>&nbsp;';
 				echo '<a href="objects/manageserver.php?action=start&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Start</a>&nbsp;';
 				echo '<a href="objects/manageserver.php?action=stop&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Stop</a>&nbsp;';
 			}

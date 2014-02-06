@@ -26,5 +26,9 @@
 		}
 	}
 	
+	if ($action == "delete") {
+		mysql_query("DELETE FROM Servers WHERE name='" . $server . "'");
+	}
+	
 	header("Location: ../dashboard.php");
 ?>

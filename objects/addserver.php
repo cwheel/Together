@@ -10,10 +10,12 @@
 	
 	validateSession();
 	
+	echo $serverAddress;
+	
 	mysql_connect($sqlserver, $sqluser, $sqlpass);
 	mysql_select_db('Together');
 
-	mysql_query('INSERT INTO Servers (name, path, port, startCmd, endCmd) VALUES("' . mysql_real_escape_string($name) . '","' . mysql_real_escape_string($path) . '","' . mysql_real_escape_string($port) .  '","' . mysql_real_escape_string($startCmd) . '","' . mysql_real_escape_string($endCmd)'")');
+	mysql_query('INSERT INTO Servers (name, path, port, startCmd, endCmd, address) VALUES("' . mysql_real_escape_string($name) . '","' . mysql_real_escape_string($path) . '","' . mysql_real_escape_string($port) .  '","' . mysql_real_escape_string($startCmd) . '","' . mysql_real_escape_string($endCmd) . '","'. $serverAddress . '")');
 	
 	header("Location: ../dashboard.php");
 ?>
