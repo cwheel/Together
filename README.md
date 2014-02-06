@@ -1,23 +1,23 @@
 Together
 ========
 
-A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct votes somewhat quietly and painlessly.
+A Lan Party Management Tool, no more loosing your voice in a few hours. Conduct votes somewhat quietly and painlessly. Provieds basic managment tools for quickly starting and stopping configured game servers.
 
 
 **Project Status:**
 
-[X] Authentication
+[✓] Authentication
 
-[X] Voting
+[✓] Voting
 
-[X] Voting Management
+[✓] Voting Management
 
 [] UI
 
-[X] Current Game Information
+[✓] Current Game Information
 
-[X] Alerts
+[✓] Alerts
 
-[~] Server List
+[✓] Server List
 
-[~] Server Management
+[✓] Server Management
