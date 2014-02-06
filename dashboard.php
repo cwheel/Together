@@ -14,9 +14,6 @@
 		<title><?php include("config.php"); echo $partyName . " Control"; ?></title>
         <link rel="stylesheet" type="text/css" href="style/style.css" /> 
 	</head>
-<div id "header">
-    <img src="images/head.png" align="center"/>
-</div>
 	<body>
 		<b><?php
 			mysql_connect($sqlserver, $sqluser, $sqlpass);
@@ -49,7 +46,6 @@
 			<input type="hidden" name="key" value="current_game_icon">
 			<input type="submit" value="Save" class="tagbtn3">
 		</form>
-<<<<<<< HEAD
 		
 		<form action="objects/addserver.php" method="post">
 			<input name="name" type="text" size="20" placeholder="Server Name">
@@ -61,10 +57,7 @@
 		</form>
 		
 		<br>
-=======
-        <p>Game decriptions are pulled from Wikipedia based on the name.</p>
 </div>
->>>>>>> 4b7dddc2d726e71c4c0ab6328a26c2d69f597238
 		<br>
 <div id="main" align="left">
 		<b>Poll Results</b>
