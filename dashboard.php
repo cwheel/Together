@@ -58,6 +58,12 @@
 		
 		<br>
 </div>
+
+<form action="objects/addpay.php" method="post">
+	<input name="name" type="text" size="20" placeholder="Name">
+	<input name="amnt" type="text" size="20" placeholder="Amount">
+	<input type="submit" value="Paied">
+</form>
 		<br>
 <div id="main" align="left">
 		<b>Poll Results</b>
@@ -90,6 +96,13 @@
 				echo '<a href="objects/manageserver.php?action=delete&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Delete</a>&nbsp;';
 				echo '<a href="objects/manageserver.php?action=start&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Start</a>&nbsp;';
 				echo '<a href="objects/manageserver.php?action=stop&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Stop</a>&nbsp;';
+			}
+			
+			echo '<br><br><b>Paied</b>';
+			$payers = mysql_query("SELECT * FROM Payers");
+			
+			for ($i = 0; $i < mysql_num_rows($payers); $i++) {
+				echo '<br>' . mysql_result($payers, $i, 1) . '&nbsp; $' . mysql_result($payers, $i, 2);
 			}
 		?>
         </div>
