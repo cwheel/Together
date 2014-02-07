@@ -21,3 +21,5 @@ A Lan Party Management Tool; no more losing your voice in a few hours. Conduct v
 [✓] Server List
 
 [✓] Server Management
+
+[✓] Payment Management
