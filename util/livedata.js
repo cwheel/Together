@@ -27,6 +27,10 @@ function updatePage(phash, ldhash, shash)
                 	$('#alert').show('fast');
                 }
                 
+                if (json.alert == "") {
+                	$('#alert').hide();
+                }
+                
                 $('#alert').html(json.alert);
                 
                 $('#pollsBox').html(json.polls);
