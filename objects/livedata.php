@@ -58,7 +58,7 @@
 	    			 	$pollsHTML = $pollsHTML . '<input type="hidden" name="pollID" value="' . mysql_result($polls, $i, 0) . '">';
 	    			 	
 	    			 	for ($j = 0; $j < count($opts); $j++) {
-	    			 		$pollsHTML = $pollsHTML . '<input type="submit" value=" class="tagbtn3"'. $opts[$j] . '" name="opt">';
+	    			 		$pollsHTML = $pollsHTML . '<input type="submit" value="'. $opts[$j] . '" name="opt">';
 	    			 	}
 	    			 	
 	    			 	$pollsHTML = $pollsHTML . '</form>';
@@ -67,16 +67,23 @@
 	    	}
 	    	
 	    	if ($activePolls == 0) {
-	    		$pollsHTML = "None...";
+	    		$pollsHTML = "No active polls";
 	    	}
 	    	
 	    	//Servers
-	    	$serversHTML = "<br>";
+	    	$serversHTML = "";
 	    	$servers = mysql_query("SELECT * FROM Servers WHERE visible='1'");
 	    	
 	    	for ($i = 0; $i < mysql_num_rows($servers); $i++) {
-	    		$serversHTML = $serversHTML . mysql_result($servers, $i, 1) . '&nbsp;' . mysql_result($servers, $i, 3) . '&nbsp;' . mysql_result($servers, $i, 7);
-	    		$serversHTML = $serversHTML . '<br>';
+	    		$serversHTML = $serversHTML . mysql_result($servers, $i, 1) . '&nbsp;<div class="serverInfo">' . mysql_result($servers, $i, 7) . ':' . mysql_result($servers, $i, 3) . '</div>';
+	    		
+	    		if ($i > mysql_num_rows($servers)) {
+	    			$serversHTML = $serversHTML . '<br>';
+	    		}
+	    	}
+	    	
+	    	if ($i < 1) {
+	    		$serversHTML = "No active servers";
 	    	}
 	    	
 	        $jsonArray = array(

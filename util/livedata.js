@@ -12,7 +12,6 @@ function updatePage(phash, ldhash, shash)
                 
                 $('#currentGame').html(json.current_game);
                 $('#currentGameDescription').html(json.current_game_descripton);
-                $('#currentGameIcon').attr("src", (json.current_game_icon));
                 
                 if ($('#alert').html() != json.alert) {
                 	if (json.alert != "") {
@@ -25,8 +24,8 @@ function updatePage(phash, ldhash, shash)
                 
                 $('#alert').html(json.alert);
                 
-                $('#polls').html(json.polls);
-                $('#servers').html(json.servers);
+                $('#pollsBox').html(json.polls);
+                $('#serversBox').html(json.servers);
                 
                 updatePage(json.phash, json.ldhash, json.shash);
             }
