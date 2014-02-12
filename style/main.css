@@ -212,6 +212,9 @@ input[type=submit] {
 	font-weight: 400;
 	color: #ffffff;
 	padding: 20px;
+	-moz-box-shadow: 0 0 1px #434343;
+	box-shadow: 0 0 1px #434343;
+	-webkit-box-shadow: 0 0 1px #434343;
 }
 
 #alertHolder {
@@ -235,6 +238,12 @@ input[type=submit] {
 }
 
 @keyframes bounce {
+    0% { left: 0%; }
+    50%   { left: 98%; }
+    100%   { left: 0%; }
+}
+
+@-webkit-keyframes bounce {
     0% { left: 0%; }
     50%   { left: 98%; }
     100%   { left: 0%; }
