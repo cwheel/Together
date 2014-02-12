@@ -13,6 +13,11 @@ function updatePage(phash, ldhash, shash)
                 $('#currentGame').html(json.current_game);
                 $('#currentGameDescription').html(json.current_game_descripton);
                 
+                if (json.current_game == "" || json.current_game_descripton == "") {
+                	$('#currentGame').html("No game is currently being played");
+                	$('#currentGameDescription').html("");
+                }
+                
                 if ($('#alert').html() != json.alert) {
                 	if (json.alert != "") {
                 		$('#noteSound')[0].play();
