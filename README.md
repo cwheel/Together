@@ -1,7 +1,7 @@
 Together
 ========
 
-A Lan Party Management Tool; no more losing your voice in a few hours. Conduct votes somewhat quietly and painlessly. Provides basic managment tools for quickly starting and stopping configured game servers.
+A Lan Party Management Tool; no more losing your voice in a few hours. Conduct votes somewhat quietly and painlessly. Provides basic managment tools for quickly starting and stopping configured game servers. All features are working and fully implimented. A back end UI is still needed but the system is fully functional without.
 
 
 **Project Status:**
@@ -12,7 +12,9 @@ A Lan Party Management Tool; no more losing your voice in a few hours. Conduct v
 
 [✓] Voting Management
 
-[~] UI
+[✓] Front End UI
+
+[~] Back End UI
 
 [✓] Current Game Information
 
