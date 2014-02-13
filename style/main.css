@@ -1,26 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
 
-#topBar {
-	width: 100%;
-	height: 45px;
-	
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	top: 0;
-	right: 0;
-	left: 0;
-	
-	background: #7d7e7d;
-	background: -moz-linear-gradient(top,  #7d7e7d 0%, #3d3d3d 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#3d3d3d));
-	background: -webkit-linear-gradient(top,  #7d7e7d 0%,#3d3d3d 100%);
-	background: -o-linear-gradient(top,  #7d7e7d 0%,#3d3d3d 100%);
-	background: -ms-linear-gradient(top,  #7d7e7d 0%,#3d3d3d 100%);
-	background: linear-gradient(to bottom,  #7d7e7d 0%,#3d3d3d 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#3d3d3d',GradientType=0 );
-	z-index: 1;
-}
+/* @group Forms UI */
 
 input[type=text],[type=password] {
 	-webkit-transition:box-shadow 0.2s linear;
@@ -42,10 +22,34 @@ input[type=text],[type=password] {
 	
 	-webkit-animation: fadein 0.5s;
 	-moz-animation: fadein 0.5s;
-	-ms-animation: fadein 0.5s;
-	-o-animation: fadein 0.5s;
 	animation: fadein 0.5s;
 }
+
+select {
+    -webkit-transition:box-shadow 0.2s linear;
+    -moz-transition:box-shadow 0.2s linear;
+    transition:box-shadow 0.2s linear;
+    
+    width:200px;
+        
+    padding: 10px;
+    font-size: 10px;
+    outline: none;
+	border-radius:5px;
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+    -moz-box-shadow: inset 0px 0px 5px #fff;
+    -webkit-box-shadow: inset 0px 0px 5px #fff;
+    box-shadow: inset 0px 0px 5px #fff;
+   	color:#fff;
+    	
+    -webkit-animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+
+select:hover {box-shadow: inset 0px 0px 7px #fff;}
+select:focus {box-shadow: inset 0px 0px 12px #fff;}
 
 input:hover {box-shadow: inset 0px 0px 7px #fff;}
 input:focus {box-shadow: inset 0px 0px 12px #fff;}
@@ -70,11 +74,54 @@ input[type=submit] {
 	padding: 5px 9px;
 }
 
+.hidden {
+	display: none;
+}
+
+/* @end */
+
+/* @group Top Area */
+
 #loginForm {
 	position: absolute;
 	right: 10px;
 	top: 5px;
 }
+
+#topBar {
+	width: 100%;
+	height: 45px;
+	
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+	
+	background: #7d7e7d;
+	background: -moz-linear-gradient(top,  #7d7e7d 0%, #3d3d3d 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#3d3d3d));
+	background: -webkit-linear-gradient(top,  #7d7e7d 0%,#3d3d3d 100%);
+	background: -o-linear-gradient(top,  #7d7e7d 0%,#3d3d3d 100%);
+	background: -ms-linear-gradient(top,  #7d7e7d 0%,#3d3d3d 100%);
+	background: linear-gradient(to bottom,  #7d7e7d 0%,#3d3d3d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#3d3d3d',GradientType=0 );
+	z-index: 1;
+}
+
+#partyTitle {
+	font: 20px 'Noto Sans', sans-serif;
+	font-weight: 800;
+	color: #ffffff;
+	position: absolute;
+	top: 7px;
+	left: 7px;
+}
+
+/* @end */
+
+/* @group Current Game */
 
 #currentGameBox {
 	border-radius: 5px;
@@ -118,6 +165,10 @@ input[type=submit] {
 	color: #ffffff;
 }
 
+/* @end */
+
+/* @group Polls */
+
 #pollsBoxHolder {
 	position: absolute;
 	right: 8%;
@@ -155,14 +206,9 @@ input[type=submit] {
 	color: #ffffff;
 }
 
-#partyTitle {
-	font: 20px 'Noto Sans', sans-serif;
-	font-weight: 800;
-	color: #ffffff;
-	position: absolute;
-	top: 7px;
-	left: 7px;
-}
+/* @end */
+
+/* @group Servers */
 
 #serversBoxHolder {
 	position: absolute;
@@ -204,6 +250,10 @@ input[type=submit] {
 	color: #c1c1c1;
 }
 
+/* @end */
+
+/* @group Alert */
+
 #alert {
 	border-radius: 5px;
 	background-color: #555555;
@@ -224,6 +274,10 @@ input[type=submit] {
 	z-index: 1;
 }
 
+/* @end */
+
+/* @group Page */
+
 #bg {	
 	width: 100%;
 	height: 100%;
@@ -236,6 +290,10 @@ input[type=submit] {
 	left: 0;
 	background-color: #000000;
 }
+
+/* @end */
+
+/* @group Animations */
 
 @keyframes bounce {
     0% { left: 0%; }
@@ -265,6 +323,4 @@ input[type=submit] {
     to   { opacity: 1; }
 }
 
-.hidden {
-	display: none;
-}
+/* @end */

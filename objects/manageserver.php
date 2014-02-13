@@ -30,5 +30,13 @@
 		mysql_query("DELETE FROM Servers WHERE name='" . $server . "'");
 	}
 	
+	if ($action == "hide") {
+		mysql_query("UPDATE Servers SET visible='0' WHERE name='" . $server . "'");
+	}
+	
+	if ($action == "show") {
+		mysql_query("UPDATE Servers SET visible='0' WHERE name='" . $server . "'");
+	}
+	
 	header("Location: ../dashboard.php");
 ?>
