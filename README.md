@@ -29,5 +29,7 @@ A Lan Party Management Tool; no more losing your voice in a few hours. Conduct v
 **Supported Browsers:**
 
 Google Chrome (Tested in 32.0)
+
 FireFox (Tested in 27.0)
+
 Safari (Tested in 7.0)
