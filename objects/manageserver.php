@@ -35,7 +35,7 @@
 	}
 	
 	if ($action == "show") {
-		mysql_query("UPDATE Servers SET visible='0' WHERE name='" . $server . "'");
+		mysql_query("UPDATE Servers SET visible='1' WHERE name='" . $server . "'");
 	}
 	
 	header("Location: ../dashboard.php");

@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.5.35-0ubuntu0.12.04.1)
+# Host: 127.0.0.1 (MySQL 5.5.35-0ubuntu0.12.04.2)
 # Database: Together
-# Generation Time: 2014-02-02 22:32:26 +0000
+# Generation Time: 2014-02-13 16:18:25 +0000
 # ************************************************************
 
 
@@ -62,6 +62,20 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table Payers
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `Payers`;
+
+CREATE TABLE `Payers` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) DEFAULT NULL,
+  `amount` varchar(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 # Dump of table Polls
 # ------------------------------------------------------------
 
@@ -85,12 +99,13 @@ DROP TABLE IF EXISTS `Servers`;
 
 CREATE TABLE `Servers` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(11) DEFAULT NULL,
+  `name` varchar(40) DEFAULT NULL,
   `path` varchar(100) DEFAULT NULL,
   `port` varchar(11) DEFAULT NULL,
   `startCmd` varchar(100) DEFAULT NULL,
   `endCmd` varchar(100) DEFAULT NULL,
-  `visible` tinyint(1) DEFAULT NULL,
+  `visible` tinyint(1) DEFAULT '1',
+  `address` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

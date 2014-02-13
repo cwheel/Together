@@ -111,10 +111,10 @@
 				echo '<a href="objects/manageserver.php?action=stop&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Stop</a>&nbsp;';
 				
 				if (mysql_result($servers, $i, 6) == '0') {
-					echo '<a href="objects/manageserver.php?action=show&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Hide</a>&nbsp;';
+					echo '<a href="objects/manageserver.php?action=show&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Show</a>&nbsp;';
 				}
 				if (mysql_result($servers, $i, 6) == '1') {
-					echo '<a href="objects/manageserver.php?action=hide&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Show</a>&nbsp;';
+					echo '<a href="objects/manageserver.php?action=hide&server=' . urlencode(mysql_result($servers, $i, 1)) . '">Hide</a>&nbsp;';
 				}
 			}
 			
