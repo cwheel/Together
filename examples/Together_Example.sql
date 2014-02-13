@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.35-0ubuntu0.12.04.2)
 # Database: Together
-# Generation Time: 2014-02-13 16:18:25 +0000
+# Generation Time: 2014-02-13 16:26:23 +0000
 # ************************************************************
 
 
@@ -55,8 +55,7 @@ INSERT INTO `LiveData` (`id`, `ld_key`, `ld_value`)
 VALUES
 	(1,'current_game',''),
 	(2,'current_game_descripton',''),
-	(3,'current_game_icon',''),
-	(4,'alert','');
+	(3,'alert','');
 
 /*!40000 ALTER TABLE `LiveData` ENABLE KEYS */;
 UNLOCK TABLES;
